@@ -20,7 +20,7 @@ $dbConnect['default'] = array("DB_HOST"=>"us-cdbr-azure-northcentral-a.cleardb.c
                               "DB_NAME"=>"tailor",
                               "DB_USER"=>"b989b6ae757f6d",
                               "DB_PASS"=>"091eea6d");
-                              /*
+                              /*http://tailor1.azurewebsites.net/
 $dbConnect['default'] = array("DB_HOST"=>"194.28.172.183",
                               "DB_NAME"=>"iproaction_tailor",
                               "DB_USER"=>"iproaction_ta",
@@ -44,7 +44,7 @@ $dbConnect['default'] = array("DB_HOST"=>"194.28.172.183",
 
 @define("SITE_DIR", "" );// dannaja constanta ispolzuetsja v backend/config/config.php
 @define("SITE_URL", $_SERVER['HTTP_HOST'].SITE_DIR);
-@define("DEFAULT_SITE_URL_FROM_DB", 'tailor.local');
+@define("DEFAULT_SITE_URL_FROM_DB", 'tailor1.azurewebsites.net');
 @define("SITE_PATH", $_SERVER['DOCUMENT_ROOT'].SITE_DIR."/");
 @define("FRAMEWORK_PATH", SITE_PATH.'framework/');
 @define("FRONTEND_PATH",SITE_PATH."frontend/");
