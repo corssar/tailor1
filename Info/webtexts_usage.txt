@@ -1,0 +1,13 @@
+раньше:
+{$webtext_title}{*Название*}
+
+
+
+
+
+теперь:
+{webtext keyword='title' value='Название'}
+
+
+с дополнительными параметрами:
+{webtext keyword='title' value='Название' useCache=false remark='test'}

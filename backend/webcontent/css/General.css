@@ -1,0 +1,451 @@
+body
+{
+	background-image:url(../img/admin_background.jpg);
+	background-color:#808080;
+	margin			:0px;
+	font-family		:Tahoma,Verdana;
+	font-size		:12px;
+	font-weight		:bold;
+}
+
+.shadow_class /* Touch this and die !!! */
+{
+	background-color:#000;
+}
+
+h2
+{
+	color			:#aaa;
+}
+
+#headLogo
+{
+	float			:left;
+	width			:260px;
+}
+#headMessages
+{
+	float			:right;
+	text-align		:right;
+	color			:#FF0000;
+	width			:500px;
+	font-size		:12px;
+}
+
+.footer_left
+{
+	width			:60%;
+	float			:left;
+	font-weight		:normal;
+	padding			:2px;
+}
+
+.footer_right
+{
+	width			:30%;
+	float			:right;
+	text-align		:right;
+	padding			:2px;
+}
+
+.footer_right a
+{
+	text-decoration	:none;
+	color			:#5A5A5A;
+}
+
+.table
+{
+	width			:950px;
+	border			:solid 2px #ccc;
+	height			:100%;
+	background-color:#eee;
+	background-color:#fff;
+	font-weight		:bold;
+}
+
+.table_left
+{
+	
+	background-image:url('../img/admin_g.jpg');	
+	background-repeat:repeat-x;
+	background-color:#fff;
+	height			:100%;
+	width			:150px;
+	text-align		:left;
+}
+
+.table_right
+{
+	background-color:#fff;
+	width			:790px;
+	/*float			:left;*/
+	text-align		:left;
+	height			:100%;
+}
+
+.table_foot
+{
+	background-color:#fff;
+	color			:#5A5A5A;
+	font-size		:11px;
+}
+.table td
+{
+	border-left		:solid 1px #ccc;
+	border-bottom	:solid 1px #ccc;
+	padding			:0px;
+}
+/*a 
+{
+	outline-color:invert;
+	outline-style:none;
+	outline-width:0px;
+}*/
+
+.left_menu
+{
+	font-weight		:bold;
+	font-size		:12px;
+	border			:none !important;
+	height			:25px;
+}
+
+.left_menu tr td
+{
+	color			:#aaa;
+	background-image:url('../img/menu_bg.jpg');
+	height			:25px;
+	cursor			:pointer;
+}
+.left_menu tr.active td.status
+{
+	color			:#aaa;
+	background-image:url('../img/menu_bgr.jpg');
+	height			:25px;
+}
+.left_menu tr.active td
+{
+	color			:#fff;
+	background-image:url('../img/menu_bg.jpg');
+	height			:25px;
+}
+.admin_ajax_loading
+{
+	position		:relative;
+	/*display			:table;*/
+	height			:527px;
+	width			:790px;
+    text-align:      center;
+	vertical-align	:middle;
+	display         :table-cell;
+}
+
+.i_text
+{
+	border			:solid 1px #555;
+	padding			:3px;
+	color			:#555;
+	width			:200px;
+}
+
+.button
+{
+	font-weight		:bold;
+	border			:solid 1px #000;
+	background		:url(../img/menu-background.gif) repeat-x scroll;
+	color			:#fff;
+	cursor			:pointer;
+	font-family		:Tahoma;	
+}
+.buttonBack
+{
+	background		:url(../img/back.jpg) no-repeat;
+	text-decoration	:none;
+	height			:20px;
+	font-family		:Tahoma;
+	font-size		:12px;
+	padding-left	:22px;
+	padding-top		:2px;
+	padding-bottom	:4px;
+	color			:#5A5A5A;
+}
+.buttonSave
+{
+	background		:url(../img/save_active.jpg) no-repeat;
+	text-decoration	:none;
+	height			:20px;
+	font-family		:Tahoma;
+	font-size		:12px;
+	padding-left	:22px;
+	padding-top		:2px;
+	padding-bottom	:4px;
+	color			:#5A5A5A;
+}
+.buttonAccept
+{
+    background		:url(../img/accept_action.png) no-repeat;
+    text-decoration	:none;
+    height			:20px;
+    font-family		:Tahoma;
+    font-size		:12px;
+    padding-left	:22px;
+    padding-top		:2px;
+    padding-bottom	:4px;
+    color			:#5A5A5A;
+}
+.buttonCancel
+{
+	background		:url(../img/cancel_active.jpg) no-repeat;
+	text-decoration	:none;
+	height			:20px;
+	font-family		:Tahoma;
+	font-size		:12px;
+	padding-left	:22px;
+	padding-top		:2px;
+	padding-bottom	:4px;
+	color			:#5A5A5A;
+}
+.buttonRelations
+{
+	background		:url(../img/relatedContent.png) no-repeat;
+	text-decoration	:none;
+	height			:20px;
+	font-family		:Tahoma;
+	font-size		:12px;
+	padding-left	:22px;
+	padding-top		:2px;
+	padding-bottom	:4px;
+	color			:#5A5A5A;
+	visibility		:hidden;
+}
+.buttonPrint
+{
+	background		:url(../img/print.gif) no-repeat;
+	text-decoration	:none;
+	height			:20px;
+	font-family		:Tahoma;
+	font-size		:12px;
+	padding-left	:22px;
+	padding-top		:2px;
+	padding-bottom	:4px;
+	color			:#5A5A5A;
+}
+
+.fileFieldContainer
+{
+	float			:right;
+	padding-top		:2px;
+	padding-right	:32px;
+}
+.linkFieldContainer
+{
+	float			:right;
+	padding-top		:5px;
+	padding-right	:32px;
+}
+.div_td
+{
+	float			:left; 
+	width			:100%;
+	border			:solid 1px #CCCCCC;
+	padding-top:	6px;
+	padding-bottom:	6px;
+	margin-bottom:	6px;
+	background-color:#dddddd;
+}
+.div_td input
+{
+	float			:right;
+	margin-right	:7px;
+}
+.div_td .text
+{
+	padding-top:	2px;
+	padding-left:	6px;
+	width:			400px;
+	float:			left;
+	font-size:		14px;
+}
+.view_header
+{
+	margin-bottom	:10px;
+	font-size		:15px;
+	overflow		:hidden;
+	clear			:both;
+}
+#main_content_container
+{
+	float:			left;
+	width:			100%;
+}
+.cursor
+{
+	cursor			:pointer;
+}
+.pagination_cursor
+{
+	cursor			:pointer;
+	padding-left	:3px;
+	padding-right	:3px;
+}
+.pagination_cursor_active{
+    color:#FF0000;
+}
+.comments_item
+{
+	border:			1px solid #A5A5A5;
+	background-color:#CCC;
+	font-size:		12px;
+	font-weight:	normal;
+	overflow:		auto;
+}
+.comments_item .text
+{
+	float:			left;
+	width:			640px;
+	padding:		4px;
+}
+.comments_item .actions
+{
+	float:			left;
+	width:			90px;
+	border-left:	solid 1px #A5A5A5;
+	/*text-align:		center;*/
+	padding:		10px;
+}
+.comments_item .button
+{
+	width:			90px;
+}
+.text
+{
+	padding-left:	7px;
+	width:			75%;
+	float:			left;
+	font-size:		14px;
+}
+
+.multiSites
+{
+    float: right;
+    margin-right: 50px;
+}
+
+.multiSites div
+{
+    float: left;
+    margin-right: 10px;
+}
+
+.multiSites select
+{
+    float: right;
+}
+
+/* s.kondratovec custom field for roles*/
+.menuRoles
+{
+    width: 300px;
+    height: 300px;
+    overflow-y: scroll;
+    background-color: #fff;
+    border: 1px solid #ebebeb;
+}
+
+.menuRoles .parent
+{
+
+}
+
+.menuRoles .child
+{
+    margin-left: 30px;
+}
+
+.logout
+{
+    float: right;
+    margin-right: 10px;
+}
+
+.websiteRole
+{
+    width: 270px;
+    margin-top: 10px;
+    margib-left: 10px;
+}
+.copyContentForm .searchFormItem
+{
+    width:  48%;
+}
+.moderateOrder
+{
+    cursor: pointer;
+}
+
+.orderHistoryContainer{
+    height: 512px;
+    width: 608px;
+    background-color: #FFFFFF;
+    border: 1px solid #EBEBEB;
+    overflow-y: scroll;
+}
+
+.orderHistoryContainer table{
+    font-size: 12px;
+    text-align: center;
+    width: 100%;
+}
+.orderHistoryContainer table td{
+    border: none;
+}
+
+.maskList h4 {
+    margin: 5px 0 2px 0;
+}
+
+.event-mask-btn {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    color: #555;
+    cursor: pointer;
+    font-weight: bold;
+    line-height: 30px;
+    padding: 1px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 1px 1px rgba(255, 255, 255, 0.4), -1px -1px rgba(0, 0, 0, 0.075);
+
+    -webkit-box-shadow:0 3px 3px 0 rgba(0, 0, 0, 0.2);
+    -moz-box-shadow:0 3px 3px 0 rgba(0, 0, 0, 0.2);
+    -o-box-shadow:0 3px 3px 0 rgba(0, 0, 0, 0.2);
+    -khtml-box-shadow:0 3px 3px 0 rgba(0, 0, 0, 0.2);
+    -ms-box-shadow:0 3px 3px 0 rgba(0, 0, 0, 0.2);
+    box-shadow:0 3px 3px 0 rgba(0, 0, 0, 0.2);
+    -webkit-transition:box-shadow 0.1s linear;
+    -moz-transition:box-shadow 0.1s linear;
+    -o-transition:box-shadow 0.1s linear;
+    -khtml-transition:box-shadow 0.1s linear;
+    -ms-transition:box-shadow 0.1s linear;
+    transition:box-shadow 0.1s linear;color:#666666;
+}
+
+.event-mask-btn:hover {
+    -webkit-box-shadow:0 0px 1px 0 rgba(0, 0, 0, 0.2);
+    -moz-box-shadow:0 0px 1px 0 rgba(0, 0, 0, 0.2);
+    -o-box-shadow:0 0px 1px 0 rgba(0, 0, 0, 0.2);
+    -khtml-box-shadow:0 0px 1px 0 rgba(0, 0, 0, 0.2);
+    -ms-box-shadow:0 0px 1px 0 rgba(0, 0, 0, 0.2);
+    box-shadow:0 0px 1px 0 rgba(0, 0, 0, 0.2);
+    color: #000;
+}
+
+.event-mask-btn span {
+    background-color: #fff;
+    background-image: -moz-linear-gradient(center top , #dddddd, #ffffff 100%);
+    background-repeat: repeat-x;
+    border-radius: 2px;
+    font-size: 13px;
+    padding: 2px;
+}

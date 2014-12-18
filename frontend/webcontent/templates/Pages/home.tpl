@@ -1,0 +1,5 @@
+{$popularProductsObject}
+{*
+{$actionProductsObject}
+{$newProductsObject}
+{$bestProducersObject}*}

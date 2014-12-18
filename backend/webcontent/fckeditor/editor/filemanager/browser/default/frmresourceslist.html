@@ -1,0 +1,406 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!--
+ * FCKeditor - The text editor for Internet - http://www.fckeditor.net
+ * Copyright (C) 2003-2007 Frederico Caldeira Knabben
+ *
+ * == BEGIN LICENSE ==
+ *
+ * Licensed under the terms of any of the following licenses at your
+ * choice:
+ *
+ *  - GNU General Public License Version 2 or later (the "GPL")
+ *    http://www.gnu.org/licenses/gpl.html
+ *
+ *  - GNU Lesser General Public License Version 2.1 or later (the "LGPL")
+ *    http://www.gnu.org/licenses/lgpl.html
+ *
+ *  - Mozilla Public License Version 1.1 or later (the "MPL")
+ *    http://www.mozilla.org/MPL/MPL-1.1.html
+ *
+ * == END LICENSE ==
+ *
+ * This page shows all resources available in a folder in the File Browser.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<link href="browser.css" type="text/css" rel="stylesheet" />
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript">
+
+	var oListManager = new Object();
+	
+	oListManager.Clear = function()
+	{
+		document.body.innerHTML = '' ;
+	}
+	
+	function ProtectPath(path)
+	{
+		path = path.replace( /\\/g, '\\\\') ;
+		path = path.replace( /'/g, '\\\'') ;
+		return path ;
+	}
+	
+	oListManager.GetFolderRowHtml = function( folderName, folderPath )
+	{
+		// Build the link to view the folder.
+		var sLink = '<a href="#" onclick="OpenFolder(\'' + ProtectPath( folderPath ) + '\');return false;" oncontextmenu="buildContextMenu(\'' + ProtectPath( folderPath ) + '\',event,\'folder\');return false;">' ;
+
+		if (oConnector.ResourceType=='Image'  && window.parent.parent.FILEMANAGER_PREVIEW_IMAGE)
+		return '<div style="float: left; width: 94px; margin-right: 15px; margin-top:5px;"><div style="float: left; width: 94px; height: 94px;">'+
+				sLink + '<img alt="" src="images/bigfolder.gif" width="94" height="94" style="border: solid 2px #5A5A5A"><\/a></div><div style="float: left; width: 94px; text-align: center;margin-top:5px;">' + 
+				sLink + folderName +
+				'<\/a></div></div>';
+		else
+		return '<tr>' +
+				'<td width="16">' +
+					sLink +
+					'<img alt="" src="images/Folder.gif" width="16" height="16" border="0"><\/a>' +
+				'<\/td><td nowrap colspan="2">&nbsp;' +
+					sLink +
+					folderName +
+					'<\/a>' +
+			'<\/td><\/tr>'
+	}
+	
+	oListManager.GetFileRowHtml = function( fileName, fileUrl, fileSize )
+	{
+		// Build the link to view the folder.
+		var sLink = '<a href="#" onclick="OpenFile(\'' + ProtectPath( fileUrl ) + '\');return false;"  oncontextmenu="buildContextMenu(\'' + ProtectPath( fileUrl ) + '\',event,\'file\');return false;">' ;
+	
+		// Get the file icon.
+		var sIcon = oIcons.GetIcon( fileName ) ;
+		
+		if (oConnector.ResourceType=='Image' && window.parent.parent.FILEMANAGER_PREVIEW_IMAGE)
+		{
+		var filename2 = fileUrl;
+		filename2 = filename2.replace("frontend/webcontent/images","frontend/webcontent/other");
+		/*return '<div style="float: left; width: 94px; margin-right: 15px; margin-top:5px;"><div style="float: left; width: 94px; height: 94px; page-break-inside: avoid">'+
+				sLink + '<img alt="" src="' + 
+				filename2 + '" border="2" title="' +
+				filename2 + '" style="vertical-align:middle"><\/a></div><div style="float: left; width: 94px; text-align: center;margin-top:5px;">' + 
+				sLink + fileName +
+				'<\/a></div></div>';*/
+		return '<div style="float: left; width: 94px; margin-right: 15px; margin-top:5px;"><div style="float: left; width: 94px; height: 94px; border:solid 2px #5A5A5A; cursor: pointer"'+
+				' onclick="OpenFile(\'' + ProtectPath( fileUrl ) + '\');return false";  oncontextmenu="buildContextMenu(\'' + ProtectPath( fileUrl ) + '\',event,\'file\');return false;">'+
+				'<table width="94px" height="94px" border="0" cellpadding="0" cellspacing="0"><tr><td align="center" valign="middle">' + 
+				'<img id="picture_preview" alt="" src="' + 
+				filename2 + '" border="0" title="' +
+				filename2 + '" class="picture_preview">' +
+				'</td></tr></table>' +
+				'</div><div style="float: left; width: 94px; text-align: center;margin-top:5px;">' + 
+				sLink + fileName +
+				'<\/a></div></div>';
+		}
+		else
+		return '<tr>' +
+				'<td width="16">' +
+					sLink +
+					'<img alt="" src="images/icons/' + sIcon + '.gif" width="16" height="16" border="0"><\/a>' +
+				'<\/td><td>&nbsp;' +
+					sLink +
+					fileName +
+					'<\/a>' +
+				'<\/td><td align="right" nowrap>&nbsp;' +
+					fileSize +
+					' KB' +
+			'<\/td><\/tr>' ;
+	}
+	
+	function OpenFolder( folderPath )
+	{
+		// Load the resources list for this folder.
+		window.parent.frames['frmFolders'].LoadFolders( folderPath ) ;
+	}
+	//Функция возвращает строку в которой все символы до символов findstr заменяются
+	//на nextstr в строке str
+	//Пример: mystr = repl_first_str('/pioneer','{SITE_URL}','pioneersite.com/folder1/pioneer/frontend/myfile.gif')
+	// mystr=="{SITE_URL}/frontend/myfile.gif"
+	function repl_first_str(findstr,nextstr,str)
+	{
+		var i=str.indexOf(findstr);
+		return nextstr + str.substr(i,str.length);
+	}
+	
+	function OpenFile( fileUrl )
+	{
+		if(parent.clickaction == 'urltofield')
+		{
+			window.top.fileManager.load( encodeURI( fileUrl ) ) ;
+		}
+		else if(parent.clickaction == 'noaction')
+		{
+			buildImagePreview(fileUrl);
+		}
+		//Max Melnychuk young 15.08.2008
+		else if(parent.clickaction == 'addlink')
+		{
+			parent.parent.parent.document.getElementById('txtUrl').value=encodeURI( fileUrl );
+			parent.parent.parent.parent.SetSelectedTab('Info');
+			parent.parent.parent.document.getElementById('cmbLinkProtocol').selectedIndex=4;
+		}
+		//**********end*****************
+		else
+		{
+			window.top.opener.SetUrl( encodeURI( fileUrl ) ) ;
+			window.top.close() ;
+			window.top.opener.focus() ;
+		}
+	}
+	 //Создает объект по его id если он не существует, или удаляет его, если он существует
+	 //написана, поскольку метод outerHTML в Mozilla не работает
+	function show_hide_menu(id)
+	{
+		if (document.getElementById(id) != null) document.getElementById(id).parentNode.removeChild(document.getElementById(id));
+	}
+	function senddata(resourceUrl,resourceType)
+	{
+		var form = new Array(3);
+		if (form['resourceName']=document.getElementById('resourceName').value=='')
+		{
+			if (resourceType=='file') alert(window.parent.parent.FILEMANAGER_ALERT_8);/*Enter please filename!!!*/
+			if (resourceType=='folder') alert(window.parent.parent.FILEMANAGER_ALERT_9);/*Enter please foldername!!!*/
+			return false;
+		};
+		form['resourcePath']=resourceUrl;
+		form['resourceType']=resourceType;
+		form['resourceName']=document.getElementById('resourceName').value;
+		form['type'] = oConnector.ResourceType;
+		
+		window.parent.parent.xajax_processRequest('FileController','renameResource',form,'','');
+	}
+	function pageX(elem) 
+	{
+		return elem.offsetParent ?
+		elem.offsetLeft + pageX( elem.offsetParent ) :
+		elem.offsetLeft;
+	}
+
+// Определение координаты элемента по вертикали
+	function pageY(elem)
+	{
+		return elem.offsetParent ?
+		elem.offsetTop + pageY( elem.offsetParent ) :
+		elem.offsetTop;
+	}
+	
+	function buildImagePreview(fileUrl)
+	{
+		window.open(fileUrl);
+		/*
+			show_hide_menu('imagePreview');
+			var imagePreview = document.createElement('DIV');
+				imagePreview.id  = 'imagePreview';
+				imagePreview.style.position  = 'absolute';
+				imagePreview.style.left = 20;
+				imagePreview.style.top  = 5;
+				imagePreview.style.height = '300px';
+				imagePreview.style.width  = '300px';
+				imagePreview.style.display = 'none';
+				imagePreview.style.borderWidth  = '1px';
+				imagePreview.style.borderStyle  = 'solid';
+				imagePreview.style.borderColor  = '#000';
+				imagePreview.style.backgroundColor  = '#CCC';
+				imagePreview.innerHTML = '<div id="imagePreviewHead" style="width:298px;height:20px;"><img src="../../../../../../webcontent/img/window_close.gif" border="0" style="float:right;cursor:pointer;padding-left:2px;padding-top:2px;" onclick="document.getElementById(\'imagePreview\').style.display = \'none\';"></div><div id="imagePreviewContent" style="overflow:auto;width:300px;height:280px;text-align:center;"><img id="imagePreviewSource" src="" border="0"></div>';
+				document.body.appendChild(imagePreview);
+				imagePreview.style.left = '40%';
+				imagePreview.style.top  = '30%';
+				imagePreview.style.display = 'block';
+				document.getElementById('imagePreviewSource').src = fileUrl;
+		*/
+		
+	}
+	function builddialogBox(resourceUrl,resourceType)
+	{
+		show_hide_menu('dialogBox');
+		var dialogBox = document.createElement('DIV');
+			dialogBox.id  = 'dialogBox';
+			dialogBox.style.position  = 'absolute';
+			dialogBox.style.left = 0;
+			dialogBox.style.top  = 0;
+			dialogBox.style.height = '100px';
+			dialogBox.style.width  = '300px';
+			dialogBox.style.display = 'none';
+			dialogBox.style.borderWidth  = '1px';
+			dialogBox.style.borderStyle  = 'solid';
+			dialogBox.style.borderColor  = '#000';
+			dialogBox.style.backgroundColor  = '#CCC';
+			var RENAMETYPE = (resourceType=="folder")? window.parent.parent.FILEMANAGER_8 : window.parent.parent.FILEMANAGER_7;
+			dialogBox.innerHTML = '<div id="dialogBoxHead" style="width:298px;height:20px;">'+
+			'<img src="../../../../../../webcontent/img/window_close.gif" border="0" style="float:right; cursor:pointer; padding-left:2px; padding-top:2px;" onclick="document.getElementById(\'dialogBox\').style.display = \'none\'">'+
+			'</div>'+
+			'<div id="dialogBoxContent" style="overflow:auto; width:300px; height:70px; text-align:center">'+
+			'<form id="resourceManagerForm" name="resourceManagerForm" onsubmit="return false;">'+
+			RENAMETYPE+
+			' &nbsp; <input id="resourceName" type="text" name="resourceName" value=""><input name="save" id="resourceSave" type="button" value="Save">'+
+			'</form></div>';
+			document.body.appendChild(dialogBox);
+			document.getElementById('resourceSave').onclick=function(){senddata(resourceUrl,resourceType)};
+			document.getElementById('resourceManagerForm').onsubmit=function(){senddata(resourceUrl,resourceType);return false};
+			/*document.getElementById('resourceManagerForm').save.onclick = xajax_renameResource(xajax.getFormValues('resourceManagerForm'));*/
+			 /*onclick="xajax_renameResource(xajax.getFormValues(\'resourceManagerForm\'));"*/
+			 /*alert(document.getElementById('resourcePath').value);*/
+			dialogBox.style.left = '40%';
+			dialogBox.style.top  = '30%';
+			dialogBox.style.display = 'block';
+		
+	}
+	function buildContextMenu( resourceUrl, e, resourceType)
+	{
+			show_hide_menu('resourceContextMenuContainer');
+			var posx = 0;
+			var posy = 0;
+			if (!e) var e = window.event;
+			if (e.pageX || e.pageY)
+			{
+				posx = e.pageX;
+				posy = e.pageY;
+			}
+			else if (e.clientX || e.clientY)
+			{
+				posx = e.clientX + document.body.scrollLeft
+					+ document.documentElement.scrollLeft;
+				posy = e.clientY + document.body.scrollTop
+					+ document.documentElement.scrollTop;
+			}
+			/* rcm - Resource Context Menu*/
+			var rcmContainer = document.createElement('DIV');
+			rcmContainer.id  = 'resourceContextMenuContainer';
+			rcmContainer.className = 'DHTMLSuite_contextMenu';
+			rcmContainer.style.position  = 'absolute';
+			rcmContainer.style.left = posx+20;
+			rcmContainer.style.top  = posy+5;
+			
+			
+			rcmMenu = document.createElement('UL');
+			rcmMenuItemRename = document.createElement('LI');
+			rcmMenuItemRename.onclick = function renameResource(){
+				builddialogBox(resourceUrl,resourceType);
+				return true;
+			};
+			var aTag = document.createElement('A');
+				aTag.href = '#';
+				aTag.innerHTML = window.parent.parent.RENAME;
+			rcmMenuItemRename.appendChild(aTag);
+			rcmMenu.appendChild(rcmMenuItemRename);
+			
+			rcmMenuItemDelete = document.createElement('LI');
+			rcmMenuItemDelete.onclick = function deleteResource(){
+				if(confirm((resourceType=="folder")? window.parent.parent.FILEMANAGER_ALERT_19 : window.parent.parent.FILEMANAGER_ALERT_7))//Are you sure, that whant delete this file? politica
+				{
+					/*window.parent.parent.xajax_deleteResource(encodeURI( resourceUrl ), resourceType);*/
+					
+					window.parent.parent.xajax_processRequest('FileController','deleteResource',{objPath:resourceUrl,objType:resourceType,type:oConnector.ResourceType},'','');
+				};
+			};
+			aTag1 = document.createElement('A');
+			aTag1.href = '#';
+			aTag1.innerHTML = window.parent.parent.DELETE;
+			rcmMenuItemDelete.appendChild(aTag1);
+			rcmMenu.appendChild(rcmMenuItemDelete);
+			
+			if (resourceType=='folder' && top.window.fileManager.showLoadGalleryMenuItem)
+			{
+				rcmMenuItemAddFolder = document.createElement('LI');
+				rcmMenuItemAddFolder.onclick = function addPhotogalleryFolder()
+				{
+					window.parent.parent.xajax_processRequest('ViewController','addPhotoFolder',{objPath:resourceUrl,objType:resourceType,type:oConnector.ResourceType,dcFieldId:window.top.fileManager.elementId},'','');
+				};
+				var aTag2 = document.createElement('A');
+					aTag2.href = '#';
+					aTag2.innerHTML = top.window.LOAD_PHOTOGALLERY;
+				rcmMenuItemAddFolder.appendChild(aTag2);
+				rcmMenu.appendChild(rcmMenuItemAddFolder);
+			}			
+			if (resourceType=='file')
+			{
+				rcmMenuItemPreview = document.createElement('LI');
+				rcmMenuItemPreview.onclick = function previewResource(){
+				buildImagePreview(resourceUrl);
+				 return false;
+				};
+				aTag2 = document.createElement('A');
+				aTag2.href = '#';
+				aTag2.innerHTML = window.parent.parent.PREVIEW;
+				rcmMenuItemPreview.appendChild(aTag2);
+				rcmMenu.appendChild(rcmMenuItemPreview);
+			}
+			rcmContainer.appendChild(rcmMenu);
+			document.body.appendChild(rcmContainer);
+		}
+	
+	function LoadResources( resourceType, folderPath )
+	{
+		oListManager.Clear() ;
+		oConnector.ResourceType = resourceType ;
+		oConnector.CurrentFolder = folderPath ;
+		oConnector.SendCommand( 'GetFoldersAndFiles', null, GetFoldersAndFilesCallBack ) ;
+	}
+	
+	function Refresh()
+	{
+		LoadResources( oConnector.ResourceType, oConnector.CurrentFolder ) ;
+	}
+	
+	function GetFoldersAndFilesCallBack( fckXml )
+	{
+		if ( oConnector.CheckError( fckXml ) != 0 )
+			return ;
+	
+		// Get the current folder path.
+		var oFolderNode = fckXml.SelectSingleNode( 'Connector/CurrentFolder' ) ;
+		if ( oFolderNode == null )
+		{
+			alert( 'The server didn\'t reply with a proper XML data. Please check your configuration.' ) ;
+			return ;
+		}
+		var sCurrentFolderPath	= oFolderNode.attributes.getNamedItem('path').value ;
+		var sCurrentFolderUrl	= oFolderNode.attributes.getNamedItem('url').value ;
+	
+		//	var dTimer = new Date() ;
+
+		if (oConnector.ResourceType=='Image' && window.parent.parent.FILEMANAGER_PREVIEW_IMAGE)
+		var oHtml = new StringBuilder( '<div id="tableFiles" cellspacing="1" cellpadding="0" width="100%" border="0">' ) ;
+		else
+		var oHtml = new StringBuilder( '<table id="tableFiles" cellspacing="1" cellpadding="0" width="100%" border="0">' ) ;
+	
+		// Add the Folders.
+		var oNodes ;
+		oNodes = fckXml.SelectNodes( 'Connector/Folders/Folder' ) ;
+		for ( var i = 0 ; i < oNodes.length ; i++ )
+		{
+			var sFolderName = oNodes[i].attributes.getNamedItem('name').value ;
+			oHtml.Append( oListManager.GetFolderRowHtml( sFolderName, sCurrentFolderPath + sFolderName + "/" ) ) ;
+		}
+	
+		// Add the Files.
+		oNodes = fckXml.SelectNodes( 'Connector/Files/File' ) ;
+		for ( var j = 0 ; j < oNodes.length ; j++ )
+		{
+			var oNode = oNodes[j] ;
+			var sFileName = oNode.attributes.getNamedItem('name').value ;
+			var sFileSize = oNode.attributes.getNamedItem('size').value ;
+	
+			// Get the optional "url" attribute. If not available, build the url.
+			var oFileUrlAtt = oNodes[j].attributes.getNamedItem('url') ;
+			var sFileUrl = oFileUrlAtt != null ? oFileUrlAtt.value : sCurrentFolderUrl + sFileName ;
+	
+			oHtml.Append( oListManager.GetFileRowHtml( sFileName, sFileUrl, sFileSize ) ) ;
+		}
+		if (oConnector.ResourceType=='Image' && window.parent.parent.FILEMANAGER_PREVIEW_IMAGE) oHtml.Append( '<\/div>' ) ; else oHtml.Append( '<\/table>' )
+	
+		document.body.innerHTML = oHtml.ToString() ;
+	
+	//	window.top.document.title = 'Finished processing in ' + ( ( ( new Date() ) - dTimer ) / 1000 ) + ' seconds' ;
+	
+	}
+	
+	window.onload = function()
+	{
+		window.top.IsLoadedResourcesList = true ;
+	}
+	</script>
+</head>
+<body class="FileArea" oncontextmenu="return false" onclick="show_hide_menu('resourceContextMenuContainer');">
+</body>
+</html>

@@ -1,0 +1,54 @@
+AddDefaultCharset UTF-8
+
+# —одержание страницы, отображаемой, если страница не найдена.
+ErrorDocument 404 /error/404.htm
+
+# —одержание страницы, отображаемой, если доступ к запрашиваемой странице запрещен
+ErrorDocument 403 /403.htm
+
+# Dlja zapreshenija dostupa k soderzhimomu direktorii, esli net index.php/index.html
+# Esli server vidaet oshibku s kodom 500, to poprobujte zaremirovat sledujushuju stroku
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+	
+    #RewriteBase
+    # ≈сли зашли в корень сайта, то перенаправить на /frontend/index.php
+    # L -- дальше файл не обрабатывать
+    # RewriteRule ^$ frontend/index.php [L]
+    
+    # работа с €зыком по умолчанию
+    RewriteRule ^(\w+)/([0-9]+)\.htm$ frontend/pages/$1.php?id=$2 [QSA,L]
+    RewriteRule ^(\w+)/([\w\-]+[0-9]*)\.htm$ frontend/pages/$1.php?pagecode=$2 [QSA,L]
+    RewriteRule ^(\w+)/(\w+)/([0-9]+)\.htm$ frontend/pages/$2.php?id=$3&lang=$1 [QSA,L]
+    RewriteRule ^(\w+)/(\w+)/([\w\-]+[0-9]*)\.htm$ frontend/pages/$2.php?pagecode=$3&lang=$1 [QSA,L] 
+
+    # ѕо€снение:
+    # первое выражение в круглых скобках -- 2 буквенных символа -- €зык
+    # второе выражение в круглых скобках -- 1 или больше буквенных символов -- класс-обработчик (страница)
+    # третье выражение в круглых скобках -- 1 или больше числовых символов -- идентификатор страницы.
+    # QSA -- добавл€ет исходные параметры запроса (query string) к замене
+    # L -- не обрабатывать дальше файл .htaccess
+    
+    # «акомментировал до того момента, как будет €сно, как мы будем обрабатывать €зыки
+    # RewriteRule ^(\w{2})/(\w+)/([0-9]+)\.htm$ frontend/pages/$2.php?id=$3&lang=$1 [QSA,L] 
+    
+    
+    # ≈сли страница не найдена, то перенаправить на главную страницу.
+    # R=302 -- временно
+#    RewriteCond %{REQUEST_FILENAME} !-d
+#    RewriteCond %{REQUEST_FILENAME} !-f
+#    RewriteRule ^(.*)$ frontend/index.php [R=302,L]
+    
+    # Zapret na dostup k sluzhebnim svn-failam
+    RewriteRule \.svn/ - [F,L]
+
+    
+
+</IfModule>
+
+<files config.php>
+	deny from all
+</files>
+

@@ -1,0 +1,7 @@
+#AuthName "Restricted area"
+
+#AuthType Basic
+
+#AuthUserFile ~/http/stonecontract/backend/.htpasswd
+
+#Require valid-user 

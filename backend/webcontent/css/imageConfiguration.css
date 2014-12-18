@@ -1,0 +1,135 @@
+.shadow_class{
+    background-color:#000;
+}
+.imConfWizardBtn{
+    font-weight		:bold;
+    border			:solid 1px #000;
+    background		:url(../img/menu-background.gif) repeat-x scroll;
+    color			:#fff;
+    cursor			:pointer;
+    font-family		:Tahoma;
+}
+#imgConfWizardHolder{
+    margin: 0 auto;
+    width: 1px;
+    height: 0px;
+    position: relative;
+    z-index: 1000;
+}
+#imgConfWizard{
+    float: left;
+    display: none;
+    width: auto;
+    /*padding: 20px 25px 10px ;*/
+    /*position: absolute;*/
+    /*border: 1px solid #000000;*/
+    background: #CCCCCC;
+}
+#imgConfWizard .searchViewTitle{
+    padding: 0 0 5px 0;
+    width: 100%;
+}
+#imgConfWizard .columnLeft, #imgConfWizard .columnRight{
+    float: left;
+    width: 556px;
+}
+#imageSizes, #imageWaterMarks, #imageDescriptions{
+    float:left;
+    width: 100%;
+    text-align: left;
+    padding: 10px 0 0;
+}
+.imgConfWizardBlockTitle, .imgConfWizardBlockRow, .imgConfWizardButtons{
+    float: left;
+    width: 100%;
+    margin: 5px 0;
+}
+.imgConfWizardBlockTitle{
+    margin: 0 0 5px 0;
+}
+.imgConfWizardButtons{
+    float: left;
+    width: 556px;
+    text-align: right;
+    padding: 1em 1.4em;
+}
+.imgConfWizardBlockRow{
+    font-weight: normal;
+}
+.imgConfWizardBlockRow select{
+    float: right;
+}
+#imageDescriptions input{
+    float: right;
+    width: 370px;
+}
+#imageDescriptions select{
+    float: left;
+    margin: 0 0 0 186px;
+}
+.imgConfWizardBlockRow .size{
+    float: left;
+    width: 50%;
+}
+.imgConfWizardBlockRow .isWatermark, .imgConfWizardBlockRow .isProportion{
+    float: left;
+    width: 25%;
+    text-align: center;
+}
+.imgConfWizardBlockRow .smallHeader{
+    font-size: 10px;
+    text-align: center;
+    font-weight: bold;
+    line-height: 0.8;
+}
+#imgConfWizardTabs{
+    border: none;
+}
+#tab_imageSettings, #tab_textDescription{
+    border: 1px solid #888888;
+    border-top: none;
+}
+#imgConfWizardTabs, #imgConfWizardTabs ul li.ui-state-active{
+    background: #CCCCCC;
+}
+#imgConfWizardTabs ul, #imgConfWizardTabs ul li.ui-state-active{
+    border: 1px solid #888888;
+}
+#imgConfWizardTabs ul{
+    padding: 0.3em 0.4em 0
+}
+#imgConfWizardTabs ul li.ui-state-active a{
+    font-weight: bold;
+    outline: none;
+}
+input.addSize{
+    float: right;
+    font-size: 10px;
+    margin: 10px 0 0;
+}
+input.custSizeVal{
+    border: 0 none;
+    margin: 0 2px;
+    padding: 0 2px;
+    width: 50px;
+}
+.fileNameLabel{
+    float: left;
+    line-height: 1.6;
+}
+.fileNameValue{
+    float: right;
+    font-weight: bold;
+}
+#imageSizesFields{
+    float: left;
+    max-height: 205px;
+    width: 100%;
+    overflow: auto;
+}
+.watermarksBlock{
+    float: left;
+    max-height: 85px;
+    overflow: auto;
+    width: 100%;
+}

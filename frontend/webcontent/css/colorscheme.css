@@ -1,0 +1,126 @@
+/*stars*/
+.star-small, .star-small div, .star-small span {
+    background: url('../system_images/stars.png');
+}
+
+.star-big, .star-big div, .star-big span {
+    background: url('images/star-comment.png');
+}
+
+.star-small {
+    width: 70px;
+    height: 15px;
+}
+
+.star-big {
+    width: 130px;
+    height: 26px;
+}
+
+.productRate {
+    position: relative;
+}
+
+.productRate div {
+    background-position: left bottom;
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.productRate span {
+    display: block;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-position: left center;
+    width: 0;
+    cursor: pointer;
+}
+
+.productRate.disabled, .productRate.disabled div {
+    cursor: default;
+}
+
+.star-small div {
+    cursor: default;
+}
+.jspVerticalBar .jspDrag {
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.jspHorizontalBar .jspDrag:after {
+    width: 8px;
+    height: 7px;
+    left: 50%;
+    margin-left: -4px;
+    top: 50%;
+    margin-top: -4px;
+}
+
+.jspVerticalBar .jspDrag:after {
+    width: 7px;
+    height: 8px;
+    left: 50%;
+    margin-left: -4px;
+    top: 50%;
+    margin-top: -4px;
+}
+
+.jspArrow {
+    position: relative;
+}
+
+.jspHorizontalBar .jspArrow:after {
+    width: 5px;
+    height: 9px;
+    top: 4px;
+}
+
+.jspVerticalBar .jspArrow:after {
+    width: 7px;
+    height: 5px;
+    top: 4px;
+}
+
+.jspDrag:after, .jspArrow:after {
+    content: "";
+    position: absolute;
+    background: url("../system_images/scroll.png") no-repeat;
+}
+
+.jspHorizontalBar .jspDrag:after {
+    background-position: 0 0;
+}
+
+.jspVerticalBar .jspDrag:after {
+    background-position: -27px 0;
+}
+
+.jspArrowLeft:after {
+    background-position: -9px 0;
+    left: 5px;
+}
+
+.jspArrowRight:after {
+    background-position: -14px 0;
+    right: 5px;
+}
+
+.jspArrowUp:after {
+    background-position: -19px 0;
+    left: 5px;
+}
+
+.jspArrowDown:after {
+    background-position: -19px -5px;
+    left: 5px;
+}

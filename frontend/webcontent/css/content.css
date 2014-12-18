@@ -1,0 +1,13 @@
+.content_faq {
+    width: 706px;
+}
+
+.content_faq img {
+    border: solid 2px #ffffff;
+    -webkit-box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.25);
+    -moz-box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.25);
+    box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.25);
+}
+.pageContent {
+    margin-top: 118px;
+}

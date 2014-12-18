@@ -1,0 +1,1 @@
+update be_AdminLanguage set `value` = 'No watermark is configured!' WHERE `key` = 'FILEMANAGER_WATERMARK';

@@ -1,0 +1,657 @@
+#DialogMessageBoxContainer
+{
+	width			:256px;
+    height			:auto;
+	/*height			:92px;*/
+	border			:solid 2px #5A5A5A;
+	background-color:#FFF;
+	z-index			:1000;
+	padding			:12px;
+}
+
+.viewTitle
+{
+	font-size		:14px;
+	height			:22px;
+	padding-bottom	:2px;
+	padding-left	:2px;
+	float			:left;
+	color			:#5A5A5A;
+}
+.searchViewTitle
+{
+	font-size		:14px;
+	float			:left;
+	color			:#5A5A5A;
+	width			:385px;
+	font-weight		:bold;
+	text-align		:left;
+	margin-left		:5px;
+	padding-top		:5px;
+    overflow        :hidden;
+}
+.viewHeadButtons
+{
+	text-align		:right;
+	width			:385px;
+	float			:right;
+	margin-right	:5px;
+	padding-top		:5px;
+}
+.searchForm
+{
+	float			:left;
+	padding			:0;
+	margin			:0;
+	width			:100%;
+}
+.fieldNameContainer
+{
+	border			:0px !important;
+	padding			:5px !important;
+	font-size		:12px;
+	width			:150px;
+}
+.fieldNameContext
+{
+	color			:#FF0000 ;
+	font-weight		:normal ;
+	font-size		:10px ;
+}
+.fieldHtmlContainer
+{
+	border			:0px !important;
+	padding			:5px !important;
+}
+
+.printFieldNameContainer
+{
+	border			:0px !important;
+	padding			:5px !important;
+	font-size		:14px;
+	width			:150px;
+}
+.printFieldHtmlContainer
+{
+	border			:0px !important;
+	padding			:5px !important;
+	font-size		:14px;
+	font-weight		:bold;
+}
+
+
+.searchFormContainer
+{
+	background-color:#ccc;
+	border			:1px solid #000;
+	font-size		:12px;
+	font-weight		:normal;
+	overflow:		auto;
+	float:			left;
+	width:			788px;
+}
+.searchFormBlock
+{
+	padding			:5px;
+}
+.searchFormItem
+{
+	float			:left;
+	padding-right	:15px;
+	padding-top		:5px;
+	padding-bottom	:5px;
+	vertical-align	:top;
+}
+.searchResultTable
+{
+    float: left;
+	padding-top		:5px;
+	font-size		:12px;
+	min-height			:442px;
+    position: relative;
+    width: 100%;
+}
+
+.searchResultTable table
+{
+	border			:1px solid #000;
+	font-size		:12px;
+	width			:100%;
+}
+
+.searchResultTable th
+{
+	background-color:#ccc;
+}
+
+.searchResultTable td
+{
+	border-left		:solid 1px #ccc;
+	border-bottom	:solid 1px #ccc;
+}
+
+.searchMpResultTable
+{
+	border			:1px solid #000;
+	width			:570px;
+}
+
+.searchMpResultTable th
+{
+	background-color:#ccc;
+}
+
+.paginationContainer
+{
+	float			:right;
+	padding			:2px;
+	font-size		:12px;
+	color			:#5A5A5A;
+}
+
+.paginationContainer a
+{
+	text-decoration	:none;
+	color			:#5A5A5A;
+}
+
+#SearchMpAgentContainer
+{
+	background-color:#ccc;
+	border			:solid 1px #000;
+	height			:80px;
+	padding			:5px;
+}
+
+#SearchMpAgentDiv
+{
+	overflow		:auto;
+	width			:350px;
+	float			:left;
+	height			:75px
+}
+
+#SearchMpAgent
+{
+	width			:340px;
+	height			:70px;
+}
+
+#SearchMpAgentButtons
+{
+	width			:25px;
+	height			:70px;
+	float			:left;
+}
+
+#SearchMpAgentSaveCancel
+{
+	float			:left;
+	width			:300px;
+	height			:70px
+}
+
+.searchResultTableMultiple
+{
+	border			:1px solid #000;
+	width			:500px;
+}
+
+.searchResultTableMultiple th
+{
+	background-color:#ccc;
+}
+
+.dhtmlTreeContainer
+{
+	width			:540px;
+	min-height		:500px;
+	height			:auto !important;
+	height			:500px;
+	border			:solid 1px #000;
+	background-color:#FFF;
+}
+
+.dynamicContentResults
+{
+	height			:200px;
+	border			:solid 1px #000;
+	overflow		:auto;
+	background-color:#FFF;
+}
+
+.listDcTable
+{
+	background-color:#FFF;
+	width			:100%;
+	font-size		:12px;
+}
+
+.listDcTable th
+{
+	background-color:#CCC;
+}
+.listDcTable td
+{
+	border-bottom	:1px solid #CCC;
+	border-left		:1px solid #CCC;
+	background-color:#FFF;
+}
+
+.FCKpreview
+{
+	height			:300px;
+	overflow		:auto;
+	border			:solid 1px #000;
+	background-color:#FFF;
+}
+
+/*Product variations*/
+#variationsManagerDiv
+{
+	height:350px;
+}
+#addAttributeType
+{
+	padding-top:	10px;
+	padding-bottom:	20px;
+}
+.variationsDescription
+{
+	padding-top:	5px;
+	padding-left:	5px;
+	float:			left;
+	width:			250px;
+
+}
+.variationsDescription .description
+{
+	font-weight:	normal;
+	text-align:		justify;
+}
+.variationsContainer
+{
+	float:			left;
+	width:			300px;
+	padding-top:	5px;
+	padding-left:	10px;
+}
+#variationItemsContainer
+{
+	padding-top:	5px;
+	width:			300px;
+	height:			250px;
+	float:			left;
+	overflow:		auto;
+	margin-bottom:	20px;
+}
+.variationName
+{
+	font-size:		12px;
+	color:			#404040;
+	font-weight:	bold;
+	padding-left:	3px;
+	margin-left:	0px;
+}
+.variationItem
+{
+	font-size:		12px;
+	font-weight:	normal;
+	color:			#000;
+	padding-left:	5px;
+	padding-bottom:	0px;
+	list-style-type:none;
+	vertical-align:	middle;
+}
+#variationSelectList
+{
+	width:200px;
+}
+#variationItemsList
+{
+	margin:	0px;
+	padding-left:	0px;
+	list-style-type:none;
+}
+#variationItemsList li
+{
+	padding-left:	0px;
+	padding-top:	0px;
+	padding-bottom:	0px;
+	margin:	0px;
+	vertical-align:	middle;
+}
+
+#attributeListDescription
+{
+	font-size:		12px;
+	color:			#000;
+	padding-top:	3px;
+	padding-bottom:	3px;
+	width:220px;
+	float:left;
+}
+
+#ProductAttributesList
+{
+	width:			200px;
+	height:			300px;
+	background-color:#FFF;
+	border:			solid 1px #A5A5A5;
+	scroll:			auto;
+	float:left;
+}
+#addProductAttributeLink
+{
+	text-align:		right;
+	color:			#000;
+	font-size:		11px;
+	font-weight:	bold;
+	width:			420px;
+	height:			15px;
+	padding-top:	5px;
+	padding-bottom:	5px;
+}
+#addProductAttributeLink span
+{
+	float:			right;
+	cursor:			pointer;
+}
+a.locked, a.opened
+{
+	display: inline-block;
+    height: 22px;
+    left: 5px;
+    position: relative;
+    top: 5px;
+    width: 22px;
+}
+a.locked
+{
+	background:				url('../img/locked.gif') no-repeat;
+}
+a.opened
+{
+	background:				url('../img/opened.gif') no-repeat;
+}
+
+/* Related langs. RelatedContent */
+#relatedContentPopUp, #relatedContentAjaxLoading,#copyContentPopUpObj
+{
+	display: none;
+}
+.addRelationLink
+{
+	font-size: 12px;
+	font-weight: normal;
+}
+.relatedContentItems
+{
+	width: 438px;
+	min-height: 20px;
+	border: solid 1px #000;
+	background-color: #FFF;
+}
+.languagesToCopyList
+{
+	width:	480px;
+	float: right;
+	font-size: 11px;
+}
+
+.languagesToCopyList .item
+{
+	width:	90px;
+	float: left;
+	display: block;
+	font-size: 12px;
+}
+
+.languagesToCopyList .hidden
+{
+	display: none;
+}
+
+.languagesToCopyList .visible
+{
+	display: block;
+}
+.column{
+    float: left;
+}
+.clear{
+    clear: both;
+    display: block;
+    height: 0;
+    overflow: hidden;
+}
+
+ul.taskTable
+{
+    list-style: none;
+    padding-left: 10px;
+    margin: 0;
+}
+
+ul.taskTable li
+{
+    width: 100%;
+    display: inline-block;
+    padding-top: 2px;
+    position: relative;
+}
+
+ul.taskTable li:first-child
+{
+    background-color: #bababa;
+    border-radius: 3px;
+}
+
+ul.taskTable li:first-child div
+{
+    border: none !important;
+}
+
+ul.taskTable li div
+{
+    float: left;
+    overflow: hidden;
+    height: 17px;
+}
+
+ul.taskTable li div.name
+{
+    width: 270px;
+    padding-left: 15px;
+    border: 1px solid #ebebeb;
+}
+
+ul.taskTable li div.progress
+{
+    width: 80px;
+    border: 1px solid #ebebeb;
+    border-left: none;
+    text-align: center;
+}
+
+ul.taskTable li div.startDate
+{
+    width: 120px;
+    border: 1px solid #ebebeb;
+    border-left: none;
+    text-align: center;
+}
+
+ul.taskTable li div.endDate
+{
+    width: 120px;
+    border: 1px solid #ebebeb;
+    border-left: none;
+    text-align: center;
+}
+
+ul.taskTable li div.taskButton
+{
+    padding: 0;
+    height: 22px;
+    margin-left: 10px;
+}
+
+ul.taskTable li .openParams
+{
+    margin-left: 10px;
+    cursor: pointer;
+    float: left;
+}
+
+
+ul.taskTable .paramsArea
+{
+    width: 507px;
+    border: 1px solid #000;
+    border-top: none;
+    padding: 10px;
+    display: none;
+    overflow: hidden;
+}
+
+ul.taskTable .paramsArea h3
+{
+    margin: 0;
+}
+
+ul.taskTable .paramsArea .params
+{
+    height: auto;
+}
+
+ul.taskTable .paramsArea .params ul
+{
+    padding: 0;
+}
+
+ul.taskTable .paramsArea .params li
+{
+    height: 30px;
+    background: none;
+}
+
+ul.taskTable .paramsArea .params label,
+ul.taskTable .paramsArea .params input
+{
+    float: left;
+}
+
+ul.taskTable .paramsArea .params label
+{
+    padding: 4px 10px 0px 0px;
+}
+
+.xmlFileUpload
+{
+    float: left;
+    cursor: pointer;
+    margin: 2px 0px 0px 10px;
+}
+
+ul.taskTable .loadingHolder
+{
+    width: 16px;
+    margin: 4px 0 0 10px;
+}
+
+ul.taskTable #loading
+{
+    background:	url('../img/ajax-loader.gif') no-repeat;
+    width: 16px;
+    display: none;
+}
+
+#TreeModalBoxContent
+{
+	background-color:#fff; 
+	border: solid 1px #000; 
+	padding:10px; 
+	width:800px;
+    min-height:585px;
+	/*min-height:605px;*/
+	z-index:100;
+	position: relative;
+	top: 10px;
+}
+
+.eventFieldLoading
+{
+    width: 16px;
+    display: none;
+}
+
+#eventResult
+{
+    display: none;
+}
+.eventLoader
+{
+    display: none;
+}
+
+.copyContent
+{
+    padding-top: 10px;
+}
+#copyOnAllSites
+{
+    margin-top: 4px;
+    float: left;
+}
+.copyContent label
+{
+    width: 200px;
+    display: inline-block;
+    margin-top: 3px;
+}
+
+.copyContent .copyButton
+{
+    float: right;
+    margin-right: 25px;
+}
+.downloadExel
+{
+    padding: 2px 6px;
+    float: right;
+    margin-right: 84px;
+    text-decoration: none;
+}
+.siteContainer label {
+    width: 100px;
+}
+
+ul.taskTable li .exportFormatFile,.exportTypeUsers{
+    width: 100%;
+}
+ul.taskTable li .exportFormatFile label,.exportTypeUsers label{
+    width: 120px;
+}
+
+/* Order preview and status change*/
+#orderViewHolder{
+    float: none;
+    width: 0;
+    padding: 0;
+    position: relative;
+}
+#orderViewHolder iframe{
+    border: 5px solid #CCCCCC;
+    border-top: 1px solid #CCCCCC;
+    position: absolute;
+    left: -157px;
+    background: #FFF url("../img/admin_ajax_loading.gif") center center no-repeat;
+}
+.moderateActiveRow{
+    background-color: #99D0FF;
+}
+.dynamicContentResults{
+    max-width: 609px;
+}
+/* end order preview */

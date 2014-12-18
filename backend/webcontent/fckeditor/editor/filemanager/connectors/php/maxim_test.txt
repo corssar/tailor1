@@ -1,0 +1,3 @@
+
+sNewFolderName=qwe
+sNewFolderName=products

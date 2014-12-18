@@ -1,0 +1,44 @@
+.tabHeadActive
+{
+	height			:28px;
+	position		:relative;
+	top				:1px;
+	padding-left	:10px;
+	padding-right	:10px;
+	cursor			:pointer;
+	font-size		:12px;
+	background-color:#C8C8C8;
+	color			:#000;
+	float			:left;
+	border			:1px solid #000;
+	border-bottom	:1px solid #C8C8C8;
+}
+
+.tabContainerActive
+{
+	border			: 1px solid #000;
+	min-height			: 530px;
+	/*overflow		:auto;*/
+	background-image:url(../img/admin_g.jpg);
+	background-repeat:repeat-x;
+}
+
+.tabHeadInactive
+{
+	background		:url(../img/menu-background.gif) repeat-x;
+	position		:relative;
+	top				:3px;
+	color			:#FFF;
+	height			:25px;
+	cursor			:pointer;
+	padding-left	:10px;
+	padding-right	:10px;
+	font-size		:12px;
+	float			:left;
+	border			:1px solid #FFF;
+}
+
+.tabContainerInactive
+{
+	display			:none;
+}

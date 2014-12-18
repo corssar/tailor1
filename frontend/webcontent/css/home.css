@@ -1,0 +1,210 @@
+.page-holder{
+    background: none;
+    float: none;
+    height: 100%;
+}
+.page-content{
+    margin: 0;
+    width: auto;
+}
+#content, #contentCenter{
+    width: 100%;
+    height: 100%;
+}
+#header{
+    position: inherit;
+    top: auto;
+}
+.headerLeft{
+    margin-left: 10%;
+}
+.headerLeft .imglink img{
+    margin: 0;
+    position: inherit;
+    top: auto;
+}
+.navMenu{
+    top: 199px;
+}
+.main-navigation li a.navigation-link, .languages-list li, .bottom-right-block div
+{
+    -webkit-box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.2);
+    box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.2);
+}
+.languages-list li{
+    background-color: White;
+    color: #231f20;
+}
+li.selected-language{
+    background-color: Black;
+    color: White;
+}
+.main-navigation li a.navigation-link{
+    background-color: White;
+}
+.navigation-link:hover, .languages-list li:hover{
+    background-color: Black;
+    color: White;
+}
+
+.home-carousel {
+    position:				relative;
+    width:					100%;
+    height:					100%;
+}
+
+.home-carousel .slides {
+    display:				block;
+    width:					100%;
+    height:					100%;
+    overflow:				hidden;
+    position:				relative;
+}
+
+.home-carousel .slides li {
+    display:				none;
+    position:				absolute;
+    top:					0px;
+    left:					0px;
+    width:					100%;
+    min-width:				1042px;
+    height:					100%;
+    overflow:				hidden;
+    background-color:		#CCC;
+    filter:					progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+    -moz-opacity:			0;
+    -khtml-opacity:			0;
+    opacity:				0;
+}
+
+.home-carousel .slides li:first-child {
+    display:				block;
+    filter:					progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+    -moz-opacity:			1;
+    -khtml-opacity:			1;
+    opacity:				1;
+}
+
+.home-carousel .slides img {
+    width:					100%;
+}
+
+.home-carousel .slides .content {
+    position:				absolute;
+    top:					50%;
+    left:					50%;
+    width:					646px;
+    height:					400px;
+    margin-top:				-300px;
+    margin-left:			-511px;
+    color:					#2d2927;
+}
+
+.home-carousel .slides .content.light {
+    color:					#e8e6db;
+}
+
+
+
+.home-carousel .slides p {
+    text-transform:			uppercase;
+    font-family:			OpenSansRegular;
+    font-size:				15px;
+    line-height:			20px;
+    margin-bottom:			18px;
+}
+
+.home-carousel .btn-prev {
+    display:				block;
+    background:				url(../system_images/prev-button.png) 0 0 no-repeat;
+    width:					36px;
+    height:					73px;
+    position:				absolute;
+    top:					50%;
+    margin-top:				-37px;
+    left:					0;
+    opacity:0.9;
+
+}
+
+.home-carousel .btn-prev:hover, .home-carousel .btn-next:hover {
+    opacity:1;
+}
+
+.home-carousel .btn-next {
+    display:				block;
+    background:				url(../system_images/next-button.png) 0 0 no-repeat;
+    width:					36px;
+    height:					73px;
+    position:				absolute;
+    top:					50%;
+    margin-top:				-37px;
+    right:					0px;
+    opacity:0.9;
+}
+
+.home-carousel .nav-items {
+    height:					180px;
+    width:					1022px;
+    position:				absolute;
+    z-index:				100;
+    bottom:					20px;
+    left:					50%;
+    margin-left:			-511px;
+    text-align:				center;
+}
+
+.home-carousel .nav-items li {
+    display:				-moz-inline-stack;
+    display:				inline-block;
+    zoom:					1;
+    *display:				inline;
+    vertical-align:			middle;
+    width:					292px;
+    height:					180px;
+    background-color:		#fff;
+    margin:					0px 16px;
+}
+
+.home-carousel .nav-items li a {
+    padding-top:			5px;
+    display:				block;
+}
+
+.home-carousel .nav-items .thumb {
+    display:				block;
+    width:					292px;
+    height:					120px;
+    margin-bottom:			9px;
+    overflow:				hidden;
+}
+
+.home-carousel .nav-items .thumb img {
+    width:					292px;
+}
+
+.home-carousel .nav-items .title {
+    display:				block;
+    text-transform:			uppercase;
+    font-family:			BodoniXTRegular;
+    font-size:				19px;
+    line-height:			20px;
+    color:					#2c2c2c;
+    margin-bottom:			3px;
+}
+
+.home-carousel .nav-items .btn {
+    display:				block;
+    text-transform:			uppercase;
+    font-family:			OpenSansBold;
+    line-height:			14px;
+    font-size:				11px;
+}
+
+.home-carousel .nav-items a:hover .btn {
+    color:					#d05328;
+}
+.fixed-left-block{
+    margin-left: 10%;
+}
