@@ -16,10 +16,15 @@ switch(ENVIRONMENT)
         ini_set('display_errors', 0);
 }
 
+$dbConnect['default'] = array("DB_HOST"=>"us-cdbr-azure-northcentral-a.cleardb.com",
+                              "DB_NAME"=>"tailor",
+                              "DB_USER"=>"b989b6ae757f6d",
+                              "DB_PASS"=>"091eea6d");
+                              /*
 $dbConnect['default'] = array("DB_HOST"=>"194.28.172.183",
                               "DB_NAME"=>"iproaction_tailor",
                               "DB_USER"=>"iproaction_ta",
-                              "DB_PASS"=>"tailor");
+                              "DB_PASS"=>"tailor");*/
 
 @define("USE_REWRITE", true);
 @define("MULTI_LANGUAGE", true);
